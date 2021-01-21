@@ -8,9 +8,7 @@ yum install -y docker-ce-18.06.1.ce-3.el7
 echo -e '\033[1;32m 设置Docker开机自启动 \033[0m'
 systemctl enable docker
 echo -e '\033[1;32m 启动docker \033[0m'
-systemctl start docker 
-echo -e '\033[1;32m 查看docker服务启动状态 \033[0m'
-systemctl status docker 
+systemctl start docker
 echo -e '\033[1;32m 查看docker版本 \033[0m'
 docker --version
 echo -e '\033[1;32m 给docker换阿里源 \033[0m'
@@ -21,8 +19,8 @@ cat <<EOF > /etc/docker/daemon.json
 EOF
 # 若想更换docker网卡的网段，则json内容如下
 #{
-#"default-address-pools": [ 
-#       { 
+#"default-address-pools": [
+#       {
 #               "base": "198.18.0.0/16",
 #               "size": 24
 #               }
@@ -31,11 +29,9 @@ EOF
 #}
 echo -e '\033[1;32m 重启docker服务 \033[0m'
 systemctl restart docker
-echo -e '\033[1;32m 查看docker服务启动状态 \033[0m'
-systemctl status docker
 
 echo -e '\033[1;32m 查看docker信息 \033[0m'
-docker info 
+docker info
 
 echo -e '\033[1;32m 2.安装docker-compose \033[0m'
 echo -e '\033[1;32m 下载docker-compose \033[0m'
